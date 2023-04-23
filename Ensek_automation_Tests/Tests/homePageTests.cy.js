@@ -9,7 +9,7 @@ describe('Home Page Tests', () => {
 
 
      it('Verify Home Page Title', () =>{
-       // homePage.pageHeader().contains('ENSEK Energy Corp.')
+      cy.get("div[class='jumbotron'] h1").contains('ENSEK Energy Corp.')
      })
 
      it('Navigate to Buy Energy Page', () =>{
