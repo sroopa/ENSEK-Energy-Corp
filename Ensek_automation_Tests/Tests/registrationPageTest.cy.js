@@ -18,9 +18,10 @@ it('Register an User Successfully', () =>{
     registrationPage.clickRegisterButton();
     cy.wait(10000);
     cy.get("h2[class='text-danger']").contains('An error occurred while processing your request')
-        
+      cy.get('.container.body-content').screenshot('');
+    cy.get('.container.body-content').screenshot();
 
-    //registrationPage.verifyRegistrationMessage()
+ 
     
 })
 it('Verify Invalid Password Message', () =>{
@@ -31,7 +32,7 @@ it('Verify Invalid Password Message', () =>{
     registrationPage.clickRegisterButton();
     cy.wait(5000)
     cy.get("div[class='text-danger validation-summary-errors']").contains('The password and confirmation password do not match.')
-    
-    //registrationPage.verifyInvalidPasswordMessage();
+    cy.get("form[role='form']").screenshot();
+   
 })
 })
