@@ -24,6 +24,7 @@ describe('Login Page Tests', () => {
         cy.wait(10000)
         cy.get("h2[class='text-danger']").contains('An error occurred while processing your request');
         //loginPage.verifyLoginMessage();
+        cy.get('.container.body-content').screenshot('');
      })
 
      it('Verify User Can Login with Invalid Email', () =>{
@@ -32,6 +33,7 @@ describe('Login Page Tests', () => {
         loginPage.clickLoginButton();
        // loginPage.invalidEmailErrorMessage();
        cy.get('span#Email-error').contains('The Email field is not a valid e-mail address.')
+          cy.get('.container.body-content').screenshot('');
     
      })
 
